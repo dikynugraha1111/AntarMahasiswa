@@ -36,11 +36,11 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: new AppBar(
+        appBar: AppBar(
           title: _pageIndex == 0
               ? Text("Antar Mahasiswa")
               : Text("Profile Anda", textAlign: TextAlign.center),
-          backgroundColor: new HexColor("#2a9d8f"),
+          backgroundColor: HexColor("#2a9d8f"),
           leading: _pageIndex == 0 ? Icon(Icons.motorcycle_outlined) : null,
           centerTitle: _pageIndex == 0 ? false : true,
         ),
