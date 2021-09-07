@@ -47,11 +47,6 @@ class _HomePageState extends HomeController {
                   child: Image.network(
                     imgUrl,
                     fit: BoxFit.cover,
-                    loadingBuilder: (BuildContext context, Widget child,
-                        ImageChunkEvent? loadingProgress) {
-                      return Container(
-                          height: 50, child: CircularProgressIndicator());
-                    },
                     errorBuilder: (BuildContext context, Object exception,
                         StackTrace? stackTrace) {
                       return Container(

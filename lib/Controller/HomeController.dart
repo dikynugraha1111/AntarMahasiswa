@@ -75,11 +75,6 @@ abstract class HomeController extends State<HomePage> {
                           width: 50.0,
                           height: 50.0,
                           fit: BoxFit.cover,
-                          loadingBuilder: (BuildContext context, Widget child,
-                              ImageChunkEvent? loadingProgress) {
-                            return Container(
-                                width: 20, child: CircularProgressIndicator());
-                          },
                           errorBuilder: (BuildContext context, Object exception,
                               StackTrace? stackTrace) {
                             return Container(

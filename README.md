@@ -1,5 +1,35 @@
 # antarmahasiswa
 
+Submission of Task 2 Gits Studi Independen.
+
+Implemented Widget =>
+
+- Container,
+- ListView,
+- Row,
+- Column,
+- Text,
+- AppBar,
+- BoxDecoration,
+- Color,
+- Icon,
+- SizedBox,
+- Card,
+- Image.Network,
+- Etc.
+
+## ScreenShot
+
+Home
+
+![Home1](img/Home1.jpg)
+
+![Home2](img/Home2.jpg)
+
+Profile
+
+![Profile](img/Profile.jpg)
+
 A new Flutter project.
 
 ## Getting Started
