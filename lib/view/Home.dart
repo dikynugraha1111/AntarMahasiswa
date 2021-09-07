@@ -93,6 +93,18 @@ class _HomePageState extends State<HomePage> {
                             width: 50.0,
                             height: 50.0,
                             fit: BoxFit.cover,
+                            loadingBuilder: (BuildContext context, Widget child,
+                                ImageChunkEvent? loadingProgress) {
+                              return Container(
+                                  width: 20,
+                                  child: CircularProgressIndicator());
+                            },
+                            errorBuilder: (BuildContext context,
+                                Object exception, StackTrace? stackTrace) {
+                              return Container(
+                                  width: 20,
+                                  child: CircularProgressIndicator());
+                            },
                           )),
                     ),
                     new Expanded(
@@ -153,6 +165,16 @@ class _HomePageState extends State<HomePage> {
                   child: Image.network(
                     imgUrl,
                     fit: BoxFit.cover,
+                    loadingBuilder: (BuildContext context, Widget child,
+                        ImageChunkEvent? loadingProgress) {
+                      return Container(
+                          height: 50, child: CircularProgressIndicator());
+                    },
+                    errorBuilder: (BuildContext context, Object exception,
+                        StackTrace? stackTrace) {
+                      return Container(
+                          width: 50, child: CircularProgressIndicator());
+                    },
                   ),
                 );
               });
