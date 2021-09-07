@@ -22,13 +22,13 @@ Implemented Widget =>
 
 Home
 
-![Home1](img/Home1.jpg | width=100)
+<img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/Home1.jpg" width="100" />
 
-![Home2](img/Home2.jpg)
+<img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/Home2.jpg" width="100" />
 
 Profile
 
-![Profile](img/Profile.jpg)
+<img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/Profile.jpg" width="100" />
 
 A new Flutter project.
 
