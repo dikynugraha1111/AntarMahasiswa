@@ -22,7 +22,7 @@ Implemented Widget =>
 
 Home
 
-![Home1](img/Home1.jpg)
+![Home1](img/Home1.jpg | width=100)
 
 ![Home2](img/Home2.jpg)
 
