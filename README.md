@@ -22,13 +22,13 @@ Implemented Widget =>
 
 Home
 
-<img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/Home1.jpg" width="100" />
+<img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/Home1.jpg" width="300" />
 
-<img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/Home2.jpg" width="100" />
+<img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/Home2.jpg" width="300" />
 
 Profile
 
-<img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/Profile.jpg" width="100" />
+<img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/Profile.jpg" width="300" />
 
 A new Flutter project.
 
