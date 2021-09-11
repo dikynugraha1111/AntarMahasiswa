@@ -40,11 +40,11 @@ class WidgetPesan extends StatelessWidget {
     return TextFormField(
       keyboardType: this.inputType,
       inputFormatters: this._inputFormatters,
-      decoration: new InputDecoration(
+      decoration: InputDecoration(
           hintText: this.hintText,
           labelText: this.labelText,
-          border: new OutlineInputBorder(
-            borderRadius: new BorderRadius.circular(20.0),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20.0),
           )),
       maxLength: maxLength,
       validator: this.validator,

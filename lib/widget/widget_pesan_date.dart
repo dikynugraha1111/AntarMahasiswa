@@ -17,20 +17,20 @@ class _WidgetPesanDateState extends State<WidgetPesanDate> {
     return Padding(
       padding:
           EdgeInsets.only(right: 15.0, left: 15.0, bottom: 10.0, top: 10.0),
-      child: new Row(
+      child: Row(
         children: [
-          new Icon(
+          Icon(
             Icons.calendar_today,
             color: Colors.black54,
             size: 27.0,
           ),
-          new Padding(padding: EdgeInsets.only(left: 15.0)),
-          new Expanded(
-              child: new Text(
+          Padding(padding: EdgeInsets.only(left: 15.0)),
+          Expanded(
+              child: Text(
             "Tanggal Lahir :",
-            style: new TextStyle(color: Colors.black54, fontSize: 15.0),
+            style: TextStyle(color: Colors.black54, fontSize: 15.0),
           )),
-          new ElevatedButton(
+          ElevatedButton(
               style: ElevatedButton.styleFrom(
                 primary: Colors.lightBlue,
                 shape: RoundedRectangleBorder(
@@ -38,9 +38,9 @@ class _WidgetPesanDateState extends State<WidgetPesanDate> {
                 ),
               ),
               onPressed: widget.onPressed,
-              child: new Text(
+              child: Text(
                 widget.date,
-                style: new TextStyle(color: Colors.white, fontSize: 16.0),
+                style: TextStyle(color: Colors.white, fontSize: 16.0),
               )),
         ],
       ),

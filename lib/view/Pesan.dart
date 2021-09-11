@@ -60,7 +60,7 @@ class _PesanPageState extends State<PesanPage> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        new Radio(
+        Radio(
           value: gender.Laki,
           groupValue: character,
           onChanged: (gender? value) {
@@ -70,9 +70,9 @@ class _PesanPageState extends State<PesanPage> {
         ),
         Text(
           'Laki',
-          style: new TextStyle(fontSize: 17.0, fontFamily: "Poppins"),
+          style: TextStyle(fontSize: 17.0, fontFamily: "Poppins"),
         ),
-        new Radio(
+        Radio(
           value: gender.Perempuan,
           groupValue: character,
           onChanged: (gender? value) {
@@ -82,14 +82,13 @@ class _PesanPageState extends State<PesanPage> {
         ),
         Text(
           'Perempuan',
-          style: new TextStyle(fontSize: 17.0, fontFamily: "Poppins"),
+          style: TextStyle(fontSize: 17.0, fontFamily: "Poppins"),
         ),
       ],
     );
   }
 
-  late final GlobalKey<ScaffoldState> _scaffoldKey =
-      new GlobalKey<ScaffoldState>();
+  late final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -100,25 +99,25 @@ class _PesanPageState extends State<PesanPage> {
         primary: false,
         shrinkWrap: true,
         children: [
-          new Form(
+          Form(
               key: formKey,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  new Container(
+                  Container(
                     height: 170.0,
                     width: double.infinity,
-                    decoration: new BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Colors.lightBlue,
                     ),
-                    child: new Center(
-                        child: new Column(
+                    child: Center(
+                        child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        new Center(
-                          child: new Text(
+                        Center(
+                          child: Text(
                             "Selamat Datang",
-                            style: new TextStyle(
+                            style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontFamily: "Poppins",
                                 fontSize: 24.0,
@@ -126,10 +125,10 @@ class _PesanPageState extends State<PesanPage> {
                                 letterSpacing: 0.5),
                           ),
                         ),
-                        new Center(
-                          child: new Text(
+                        Center(
+                          child: Text(
                             "Silahlkan Lakukan Pendaftaran",
-                            style: new TextStyle(
+                            style: TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontFamily: "Poppins",
                                 fontSize: 15.0,
@@ -140,13 +139,13 @@ class _PesanPageState extends State<PesanPage> {
                       ],
                     )),
                   ),
-                  new Container(
+                  Container(
                     height: MediaQuery.of(context).size.height,
                     padding: const EdgeInsets.only(
                         left: 20.0, right: 20.0, bottom: 7.0, top: 27.0),
-                    decoration: new BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: new BorderRadius.only(
+                      borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(20),
                           topRight: Radius.circular(20)),
                     ),

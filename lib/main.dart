@@ -1,5 +1,4 @@
-import 'package:antarmahasiswa/view/Main.dart';
-import 'package:antarmahasiswa/view/Pesan.dart';
+import 'package:antarmahasiswa/view/pesan.dart';
 import 'package:flutter/material.dart';
 
 void main() {
