@@ -49,34 +49,6 @@ class _PesanPageState extends State<PesanPage> {
     }
   }
 
-  // noted Build Widget for Email
-  Widget buildEmail() {
-    return TextFormField(
-      decoration: new InputDecoration(
-          hintText: "Masukan Email",
-          labelText: "Masukan Alamat Email",
-          border: new OutlineInputBorder(
-            borderRadius: new BorderRadius.circular(20.0),
-          )),
-      maxLength: 50,
-      validator: (String? value) {
-        if (value!.isEmpty) {
-          return 'Masukan EMAIL WOI';
-        }
-        if (!RegExp(
-                r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
-            .hasMatch(value)) {
-          return 'Tolong Masukan Email yang benar';
-        }
-
-        return null;
-      },
-      onSaved: (String? value) {
-        email = value!;
-      },
-    );
-  }
-
   void selectGender(gender? value) {
     setState(() {
       character = value;
@@ -185,15 +157,45 @@ class _PesanPageState extends State<PesanPage> {
                             labelText: "Nama",
                             maxLength: 33,
                             inputType: TextInputType.name,
+                            validator: (String? value) {
+                              if (value!.isEmpty) {
+                                return 'Nama is Required';
+                              }
+                              return null;
+                            },
                             onSaved: (String? value) {
                               name = value!;
                             }),
-                        buildEmail(),
+                        WidgetPesan(
+                            hintText: "Masukan Email",
+                            labelText: "Email",
+                            maxLength: 33,
+                            validator: (String? value) {
+                              if (value!.isEmpty) {
+                                return 'Email is Required';
+                              }
+                              if (!RegExp(
+                                      r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
+                                  .hasMatch(value)) {
+                                return 'Tolong Masukan Email yang benar';
+                              }
+
+                              return null;
+                            },
+                            onSaved: (String? value) {
+                              email = value!;
+                            }),
                         WidgetPesan(
                             inputType: TextInputType.phone,
                             hintText: "Masukan Nomor",
                             labelText: "HandPhone",
                             maxLength: 15,
+                            validator: (String? value) {
+                              if (value!.isEmpty) {
+                                return 'Phone Number is Required';
+                              }
+                              return null;
+                            },
                             onSaved: (String? value) {
                               phone = int.parse(value!);
                             }),
@@ -202,6 +204,12 @@ class _PesanPageState extends State<PesanPage> {
                             hintText: "Masukan Alamat",
                             labelText: "Address",
                             maxLength: 50,
+                            validator: (String? value) {
+                              if (value!.isEmpty) {
+                                return 'Address is Required';
+                              }
+                              return null;
+                            },
                             onSaved: (String? value) {
                               address = value!;
                             }),
@@ -230,7 +238,11 @@ class _PesanPageState extends State<PesanPage> {
                                       return CustomDialog(
                                           title: "Noted",
                                           description:
-                                              "Selamat $name Pendaftaran Berhasil");
+                                              "Selamat $name Pendaftaran Berhasil",
+                                          email: email,
+                                          phone: phone.toString(),
+                                          address: address,
+                                          date: dateText);
                                     });
                               },
                               child: Text("Daftar",

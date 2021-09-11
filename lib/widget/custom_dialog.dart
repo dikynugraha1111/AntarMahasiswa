@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CustomDialog extends StatelessWidget {
-  final String title, description;
+  final String title, description, email, phone, address, date;
 
-  CustomDialog({required this.title, required this.description});
+  CustomDialog(
+      {required this.title,
+      required this.description,
+      required this.email,
+      required this.phone,
+      required this.address,
+      required this.date});
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +53,26 @@ class CustomDialog extends StatelessWidget {
                 ),
                 SizedBox(height: 24.0),
                 Text(description,
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.w300)),
+                Text(email,
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.w300)),
+                Text(phone,
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.w300)),
+                Text(address,
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.w300)),
+                Text(date,
                     style: TextStyle(
                         fontSize: 16,
                         fontFamily: "Poppins",

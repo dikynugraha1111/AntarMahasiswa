@@ -18,7 +18,7 @@ Implemented Widget =>
 - Image.Network,
 - Etc.
 
-## ScreenShot
+## ScreenShot Task 1
 
 Home
 
@@ -29,6 +29,24 @@ Home
 Profile
 
 <img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/Profile.jpg" width="300" />
+
+## ScreenShot Task 2
+
+Input Registration Page
+
+<img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/InputReg1.jpg" width="300" />
+
+Input Date
+
+<img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/InputReg2.jpg" width="300" />
+
+Pop-Up Notification
+
+<img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/InputReg3.jpg" width="300" />
+
+Form Validation
+
+<img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/InputReg4.jpg" width="300" />
 
 A new Flutter project.
 

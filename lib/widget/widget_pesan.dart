@@ -8,15 +8,17 @@ class WidgetPesan extends StatelessWidget {
   final TextInputType inputType;
 
   final ValueChanged<String?> onSaved;
+  final FormFieldValidator<String>? validator;
 
-  const WidgetPesan(
-      {Key? key,
-      required this.hintText,
-      required this.labelText,
-      required this.maxLength,
-      this.inputType = TextInputType.text,
-      required this.onSaved})
-      : super(key: key);
+  const WidgetPesan({
+    Key? key,
+    required this.hintText,
+    required this.labelText,
+    required this.maxLength,
+    this.inputType = TextInputType.text,
+    required this.onSaved,
+    this.validator,
+  }) : super(key: key);
 
   List<TextInputFormatter> get _inputFormatters {
     List<TextInputFormatter> _formatters = <TextInputFormatter>[];
@@ -45,12 +47,7 @@ class WidgetPesan extends StatelessWidget {
             borderRadius: new BorderRadius.circular(20.0),
           )),
       maxLength: maxLength,
-      validator: (String? value) {
-        if (value!.isEmpty) {
-          return 'Input is Required';
-        }
-        return null;
-      },
+      validator: this.validator,
       onSaved: this.onSaved,
     );
   }
