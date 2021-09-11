@@ -41,15 +41,17 @@ abstract class HomeController extends State<HomePage> {
                   Text("Motor")
                 ],
               ),
-              Column(
-                children: [
-                  iconMenu(
-                    Icons.mail_outline,
-                    Colors.greenAccent,
-                  ),
-                  SizedBox(height: 6.0),
-                  Text("Antar")
-                ],
+              GestureDetector(
+                child: Column(
+                  children: [
+                    iconMenu(
+                      Icons.mail_outline,
+                      Colors.greenAccent,
+                    ),
+                    SizedBox(height: 6.0),
+                    Text("Antar")
+                  ],
+                ),
               ),
             ]),
       ),

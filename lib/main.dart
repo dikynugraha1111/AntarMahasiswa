@@ -1,4 +1,5 @@
 import 'package:antarmahasiswa/view/Main.dart';
+import 'package:antarmahasiswa/view/Pesan.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Antar Mahasiswa',
-      home: MainPage(),
+      home: PesanPage(),
     );
   }
 }
