@@ -99,164 +99,167 @@ class _PesanPageState extends State<PesanPage> {
         primary: false,
         shrinkWrap: true,
         children: [
+          // Form(
+          //     key: formKey,
+          //     child: Column(
+          //       mainAxisSize: MainAxisSize.max,
+          //       children: [
+          Container(
+            height: 170.0,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Colors.lightBlue,
+            ),
+            child: Center(
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Center(
+                  child: Text(
+                    "Selamat Datang",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "Poppins",
+                        fontSize: 24.0,
+                        color: Colors.white,
+                        letterSpacing: 0.5),
+                  ),
+                ),
+                Center(
+                  child: Text(
+                    "Silahlkan Lakukan Pendaftaran",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontFamily: "Poppins",
+                        fontSize: 15.0,
+                        color: Colors.white.withOpacity(0.8),
+                        letterSpacing: 0.5),
+                  ),
+                ),
+              ],
+            )),
+          ),
           Form(
-              key: formKey,
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
+            key: formKey,
+            child: Container(
+              height: MediaQuery.of(context).size.height,
+              padding: const EdgeInsets.only(
+                  left: 20.0, right: 20.0, bottom: 7.0, top: 27.0),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20)),
+              ),
+              child: ListView(
+                primary: false,
+                shrinkWrap: true,
                 children: [
-                  Container(
-                    height: 170.0,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.lightBlue,
-                    ),
-                    child: Center(
-                        child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Center(
-                          child: Text(
-                            "Selamat Datang",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontFamily: "Poppins",
-                                fontSize: 24.0,
-                                color: Colors.white,
-                                letterSpacing: 0.5),
-                          ),
-                        ),
-                        Center(
-                          child: Text(
-                            "Silahlkan Lakukan Pendaftaran",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontFamily: "Poppins",
-                                fontSize: 15.0,
-                                color: Colors.white.withOpacity(0.8),
-                                letterSpacing: 0.5),
-                          ),
-                        ),
-                      ],
-                    )),
-                  ),
-                  Container(
-                    height: MediaQuery.of(context).size.height,
-                    padding: const EdgeInsets.only(
-                        left: 20.0, right: 20.0, bottom: 7.0, top: 27.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20)),
-                    ),
-                    child: ListView(
-                      children: [
-                        WidgetPesan(
-                            hintText: "Masukan Nama",
-                            labelText: "Nama",
-                            maxLength: 33,
-                            inputType: TextInputType.name,
-                            validator: (String? value) {
-                              if (value!.isEmpty) {
-                                return 'Nama is Required';
-                              }
-                              return null;
-                            },
-                            onSaved: (String? value) {
-                              name = value!;
-                            }),
-                        WidgetPesan(
-                            hintText: "Masukan Email",
-                            labelText: "Email",
-                            maxLength: 33,
-                            validator: (String? value) {
-                              if (value!.isEmpty) {
-                                return 'Email is Required';
-                              }
-                              if (!RegExp(
-                                      r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
-                                  .hasMatch(value)) {
-                                return 'Tolong Masukan Email yang benar';
-                              }
+                  WidgetPesan(
+                      hintText: "Masukan Nama",
+                      labelText: "Nama",
+                      maxLength: 33,
+                      inputType: TextInputType.name,
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
+                          return 'Nama is Required';
+                        }
+                        return null;
+                      },
+                      onSaved: (String? value) {
+                        name = value!;
+                      }),
+                  WidgetPesan(
+                      hintText: "Masukan Email",
+                      labelText: "Email",
+                      maxLength: 33,
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
+                          return 'Email is Required';
+                        }
+                        if (!RegExp(
+                                r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
+                            .hasMatch(value)) {
+                          return 'Tolong Masukan Email yang benar';
+                        }
 
-                              return null;
-                            },
-                            onSaved: (String? value) {
-                              email = value!;
-                            }),
-                        WidgetPesan(
-                            inputType: TextInputType.phone,
-                            hintText: "Masukan Nomor",
-                            labelText: "HandPhone",
-                            maxLength: 15,
-                            validator: (String? value) {
-                              if (value!.isEmpty) {
-                                return 'Phone Number is Required';
-                              }
-                              return null;
-                            },
-                            onSaved: (String? value) {
-                              phone = int.parse(value!);
-                            }),
-                        WidgetPesan(
-                            inputType: TextInputType.streetAddress,
-                            hintText: "Masukan Alamat",
-                            labelText: "Address",
-                            maxLength: 50,
-                            validator: (String? value) {
-                              if (value!.isEmpty) {
-                                return 'Address is Required';
-                              }
-                              return null;
-                            },
-                            onSaved: (String? value) {
-                              address = value!;
-                            }),
-                        WidgetPesanDate(
-                            onPressed: () => selectDueDate(context),
-                            date: dateText),
-                        buildGender(),
-                        SizedBox(
-                          height: 15.0,
-                        ),
-                        Expanded(
-                          child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  primary: Colors.lightBlue,
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(7.0))),
-                              onPressed: () {
-                                if (!formKey.currentState!.validate()) {
-                                  return;
-                                }
-                                formKey.currentState!.save();
-                                showDialog(
-                                    context: context,
-                                    builder: (context) {
-                                      return CustomDialog(
-                                          title: "Noted",
-                                          description:
-                                              "Selamat $name Pendaftaran Berhasil",
-                                          email: email,
-                                          phone: phone.toString(),
-                                          address: address,
-                                          date: dateText);
-                                    });
-                              },
-                              child: Text("Daftar",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontFamily: "Poppins",
-                                      fontSize: 16.0,
-                                      letterSpacing: 2.5))),
-                        )
-                      ],
-                    ),
+                        return null;
+                      },
+                      onSaved: (String? value) {
+                        email = value!;
+                      }),
+                  WidgetPesan(
+                      inputType: TextInputType.phone,
+                      hintText: "Masukan Nomor",
+                      labelText: "HandPhone",
+                      maxLength: 15,
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
+                          return 'Phone Number is Required';
+                        }
+                        return null;
+                      },
+                      onSaved: (String? value) {
+                        phone = int.parse(value!);
+                      }),
+                  WidgetPesan(
+                      inputType: TextInputType.streetAddress,
+                      hintText: "Masukan Alamat",
+                      labelText: "Address",
+                      maxLength: 50,
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
+                          return 'Address is Required';
+                        }
+                        return null;
+                      },
+                      onSaved: (String? value) {
+                        address = value!;
+                      }),
+                  WidgetPesanDate(
+                      onPressed: () => selectDueDate(context), date: dateText),
+                  buildGender(),
+                  SizedBox(
+                    height: 15.0,
                   ),
+                  Expanded(
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            primary: Colors.lightBlue,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(7.0))),
+                        onPressed: () {
+                          if (!formKey.currentState!.validate()) {
+                            return;
+                          }
+                          formKey.currentState!.save();
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return CustomDialog(
+                                    title: "Noted",
+                                    description:
+                                        "Selamat $name Pendaftaran Berhasil",
+                                    email: email,
+                                    phone: phone.toString(),
+                                    address: address,
+                                    date: dateText);
+                              });
+                        },
+                        child: Text("Daftar",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontFamily: "Poppins",
+                                fontSize: 16.0,
+                                letterSpacing: 2.5))),
+                  )
                 ],
-              ))
+              ),
+            ),
+          ),
         ],
+        // ))
+        // ],
       ),
     );
   }
