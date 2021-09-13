@@ -22,6 +22,7 @@ class _PesanPageState extends State<PesanPage> {
   late String dateText;
   late String email;
   late String address;
+  bool isChecked = false;
   //late String gander;
 
   gender? character = gender.Laki;
@@ -219,6 +220,22 @@ class _PesanPageState extends State<PesanPage> {
                   WidgetPesanDate(
                       onPressed: () => selectDueDate(context), date: dateText),
                   buildGender(),
+                  Row(
+                    children: [
+                      Checkbox(
+                          value: isChecked,
+                          onChanged: (bool? value) {
+                            setState(() {
+                              isChecked = value!;
+                            });
+                          }),
+                      Expanded(
+                        child: Text(
+                          "Saya menyetujui semua persyaratan dari pendaftaran ini",
+                        ),
+                      )
+                    ],
+                  ),
                   SizedBox(
                     height: 15.0,
                   ),
@@ -228,24 +245,26 @@ class _PesanPageState extends State<PesanPage> {
                             primary: Colors.lightBlue,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(7.0))),
-                        onPressed: () {
-                          if (!formKey.currentState!.validate()) {
-                            return;
-                          }
-                          formKey.currentState!.save();
-                          showDialog(
-                              context: context,
-                              builder: (context) {
-                                return CustomDialog(
-                                    title: "Noted",
-                                    description:
-                                        "Selamat $name Pendaftaran Berhasil",
-                                    email: email,
-                                    phone: phone.toString(),
-                                    address: address,
-                                    date: dateText);
-                              });
-                        },
+                        onPressed: isChecked
+                            ? () {
+                                if (!formKey.currentState!.validate()) {
+                                  return;
+                                }
+                                formKey.currentState!.save();
+                                showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return CustomDialog(
+                                          title: "Noted",
+                                          description:
+                                              "Selamat $name Pendaftaran Berhasil",
+                                          email: email,
+                                          phone: phone.toString(),
+                                          address: address,
+                                          date: dateText);
+                                    });
+                              }
+                            : null,
                         child: Text("Daftar",
                             style: TextStyle(
                                 fontWeight: FontWeight.w600,
