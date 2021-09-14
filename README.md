@@ -1,22 +1,6 @@
 # antarmahasiswa
 
-Submission of Task 2 Gits Studi Independen.
-
-Implemented Widget =>
-
-- Container,
-- ListView,
-- Row,
-- Column,
-- Text,
-- AppBar,
-- BoxDecoration,
-- Color,
-- Icon,
-- SizedBox,
-- Card,
-- Image.Network,
-- Etc.
+Submission of Tasks Gits Studi Independen.
 
 ## ScreenShot Task 1
 
@@ -40,13 +24,17 @@ Input Date
 
 <img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/InputReg2.jpg" width="300" />
 
-Pop-Up Notification
+Check of Terms
 
 <img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/InputReg3.jpg" width="300" />
 
-Form Validation
+Pop-Up Notification
 
 <img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/InputReg4.jpg" width="300" />
+
+Form Validation
+
+<img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/InputReg5.jpg" width="300" />
 
 A new Flutter project.
 
