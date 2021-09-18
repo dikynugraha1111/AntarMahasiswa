@@ -38,10 +38,12 @@ class _ProfilePageState extends State<ProfilePage> {
         new Stack(children: [
           new Container(
             decoration: new BoxDecoration(
-                color: HexColor("#2a9d8f"),
-                borderRadius: new BorderRadius.only(
-                    bottomLeft: Radius.circular(21.0),
-                    bottomRight: Radius.circular(21.0))),
+              color: HexColor("#2a9d8f"),
+              borderRadius: new BorderRadius.only(
+                bottomLeft: Radius.circular(21.0),
+                bottomRight: Radius.circular(21.0),
+              ),
+            ),
             width: double.infinity,
             height: 100.0,
           ),
@@ -52,15 +54,15 @@ class _ProfilePageState extends State<ProfilePage> {
               width: 150.0,
               height: 150.0,
               decoration: new BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                      color: Colors.white,
-                      width: 7.0,
-                      style: BorderStyle.solid),
-                  image: new DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(
-                          "https://foto.kontan.co.id/ZtqnsCKMUotw3laCVwL7crhni54=/smart/2021/01/04/112846091p.jpg"))),
+                shape: BoxShape.circle,
+                border: Border.all(
+                    color: Colors.white, width: 7.0, style: BorderStyle.solid),
+                image: new DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(
+                      "https://foto.kontan.co.id/ZtqnsCKMUotw3laCVwL7crhni54=/smart/2021/01/04/112846091p.jpg"),
+                ),
+              ),
             ),
           ),
         ]),

@@ -1,4 +1,4 @@
-import 'package:antarmahasiswa/view/pesan.dart';
+import 'view/register_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

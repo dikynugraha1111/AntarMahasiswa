@@ -1,4 +1,4 @@
-import 'package:antarmahasiswa/view/Home.dart';
+import 'package:antarmahasiswa/view/home_page.dart';
 import 'package:flutter/material.dart';
 
 abstract class HomeController extends State<HomePage> {

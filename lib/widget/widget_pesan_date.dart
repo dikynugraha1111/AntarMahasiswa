@@ -26,22 +26,24 @@ class _WidgetPesanDateState extends State<WidgetPesanDate> {
           ),
           Padding(padding: EdgeInsets.only(left: 15.0)),
           Expanded(
-              child: Text(
-            "Tanggal Lahir :",
-            style: TextStyle(color: Colors.black54, fontSize: 15.0),
-          )),
+            child: Text(
+              "Tanggal Lahir :",
+              style: TextStyle(color: Colors.black54, fontSize: 15.0),
+            ),
+          ),
           ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.lightBlue,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.lightBlue,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
               ),
-              onPressed: widget.onPressed,
-              child: Text(
-                widget.date,
-                style: TextStyle(color: Colors.white, fontSize: 16.0),
-              )),
+            ),
+            onPressed: widget.onPressed,
+            child: Text(
+              widget.date,
+              style: TextStyle(color: Colors.white, fontSize: 16.0),
+            ),
+          ),
         ],
       ),
     );

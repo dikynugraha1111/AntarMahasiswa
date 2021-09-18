@@ -36,12 +36,13 @@ class _PesanPageState extends State<PesanPage> {
   // noted Pick a Date and change dueDate(Date Now) value
   Future<Null> selectDueDate(BuildContext context) async {
     final picked = await showDatePicker(
-        initialDatePickerMode: DatePickerMode.year,
-        initialEntryMode: DatePickerEntryMode.calendar,
-        context: context,
-        initialDate: dueDate,
-        firstDate: DateTime(1960),
-        lastDate: DateTime.now());
+      initialDatePickerMode: DatePickerMode.year,
+      initialEntryMode: DatePickerEntryMode.calendar,
+      context: context,
+      initialDate: dueDate,
+      firstDate: DateTime(1960),
+      lastDate: DateTime.now(),
+    );
     if (picked != null) {
       setState(() {
         dueDate = picked;
@@ -100,11 +101,6 @@ class _PesanPageState extends State<PesanPage> {
         primary: false,
         shrinkWrap: true,
         children: [
-          // Form(
-          //     key: formKey,
-          //     child: Column(
-          //       mainAxisSize: MainAxisSize.max,
-          //       children: [
           Container(
             height: 170.0,
             width: double.infinity,
@@ -112,33 +108,34 @@ class _PesanPageState extends State<PesanPage> {
               color: Colors.lightBlue,
             ),
             child: Center(
-                child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Center(
-                  child: Text(
-                    "Selamat Datang",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "Poppins",
-                        fontSize: 24.0,
-                        color: Colors.white,
-                        letterSpacing: 0.5),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Center(
+                    child: Text(
+                      "Selamat Datang",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Poppins",
+                          fontSize: 24.0,
+                          color: Colors.white,
+                          letterSpacing: 0.5),
+                    ),
                   ),
-                ),
-                Center(
-                  child: Text(
-                    "Silahlkan Lakukan Pendaftaran",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontFamily: "Poppins",
-                        fontSize: 15.0,
-                        color: Colors.white.withOpacity(0.8),
-                        letterSpacing: 0.5),
+                  Center(
+                    child: Text(
+                      "Silahlkan Lakukan Pendaftaran",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontFamily: "Poppins",
+                          fontSize: 15.0,
+                          color: Colors.white.withOpacity(0.8),
+                          letterSpacing: 0.5),
+                    ),
                   ),
-                ),
-              ],
-            )),
+                ],
+              ),
+            ),
           ),
           Form(
             key: formKey,
@@ -149,8 +146,9 @@ class _PesanPageState extends State<PesanPage> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20)),
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
               ),
               child: ListView(
                 primary: false,
@@ -190,33 +188,35 @@ class _PesanPageState extends State<PesanPage> {
                         email = value!;
                       }),
                   WidgetPesan(
-                      inputType: TextInputType.phone,
-                      hintText: "Masukan Nomor",
-                      labelText: "HandPhone",
-                      maxLength: 15,
-                      validator: (String? value) {
-                        if (value!.isEmpty) {
-                          return 'Phone Number is Required';
-                        }
-                        return null;
-                      },
-                      onSaved: (String? value) {
-                        phone = int.parse(value!);
-                      }),
+                    inputType: TextInputType.phone,
+                    hintText: "Masukan Nomor",
+                    labelText: "HandPhone",
+                    maxLength: 15,
+                    validator: (String? value) {
+                      if (value!.isEmpty) {
+                        return 'Phone Number is Required';
+                      }
+                      return null;
+                    },
+                    onSaved: (String? value) {
+                      phone = int.parse(value!);
+                    },
+                  ),
                   WidgetPesan(
-                      inputType: TextInputType.streetAddress,
-                      hintText: "Masukan Alamat",
-                      labelText: "Address",
-                      maxLength: 50,
-                      validator: (String? value) {
-                        if (value!.isEmpty) {
-                          return 'Address is Required';
-                        }
-                        return null;
-                      },
-                      onSaved: (String? value) {
-                        address = value!;
-                      }),
+                    inputType: TextInputType.streetAddress,
+                    hintText: "Masukan Alamat",
+                    labelText: "Address",
+                    maxLength: 50,
+                    validator: (String? value) {
+                      if (value!.isEmpty) {
+                        return 'Address is Required';
+                      }
+                      return null;
+                    },
+                    onSaved: (String? value) {
+                      address = value!;
+                    },
+                  ),
                   WidgetPesanDate(
                       onPressed: () => selectDueDate(context), date: dateText),
                   buildGender(),
@@ -225,9 +225,11 @@ class _PesanPageState extends State<PesanPage> {
                       Checkbox(
                           value: isChecked,
                           onChanged: (bool? value) {
-                            setState(() {
-                              isChecked = value!;
-                            });
+                            setState(
+                              () {
+                                isChecked = value!;
+                              },
+                            );
                           }),
                       Expanded(
                         child: Text(
@@ -241,44 +243,48 @@ class _PesanPageState extends State<PesanPage> {
                   ),
                   Expanded(
                     child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            primary: Colors.lightBlue,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(7.0))),
-                        onPressed: isChecked
-                            ? () {
-                                if (!formKey.currentState!.validate()) {
-                                  return;
-                                }
-                                formKey.currentState!.save();
-                                showDialog(
-                                    context: context,
-                                    builder: (context) {
-                                      return CustomDialog(
-                                          title: "Noted",
-                                          description:
-                                              "Selamat $name Pendaftaran Berhasil",
-                                          email: email,
-                                          phone: phone.toString(),
-                                          address: address,
-                                          date: dateText);
-                                    });
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.lightBlue,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(7.0),
+                        ),
+                      ),
+                      onPressed: isChecked
+                          ? () {
+                              if (!formKey.currentState!.validate()) {
+                                return;
                               }
-                            : null,
-                        child: Text("Daftar",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontFamily: "Poppins",
-                                fontSize: 16.0,
-                                letterSpacing: 2.5))),
+                              formKey.currentState!.save();
+                              showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return CustomDialog(
+                                      title: "Noted",
+                                      description:
+                                          "Selamat $name Pendaftaran Berhasil",
+                                      email: email,
+                                      phone: phone.toString(),
+                                      address: address,
+                                      date: dateText);
+                                },
+                              );
+                            }
+                          : null,
+                      child: Text(
+                        "Daftar",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontFamily: "Poppins",
+                            fontSize: 16.0,
+                            letterSpacing: 2.5),
+                      ),
+                    ),
                   )
                 ],
               ),
             ),
           ),
         ],
-        // ))
-        // ],
       ),
     );
   }

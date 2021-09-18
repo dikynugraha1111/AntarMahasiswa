@@ -41,11 +41,12 @@ class WidgetPesan extends StatelessWidget {
       keyboardType: this.inputType,
       inputFormatters: this._inputFormatters,
       decoration: InputDecoration(
-          hintText: this.hintText,
-          labelText: this.labelText,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20.0),
-          )),
+        hintText: this.hintText,
+        labelText: this.labelText,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+      ),
       maxLength: maxLength,
       validator: this.validator,
       onSaved: this.onSaved,

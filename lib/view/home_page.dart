@@ -36,40 +36,50 @@ class _HomePageState extends HomeController {
               height: 200.0,
               initialPage: 0,
             ),
-            items: img.map((imgUrl) {
-              return Builder(builder: (BuildContext context) {
-                return Container(
-                  width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.only(right: 7.0, left: 7.0, top: 10.0),
-                  decoration: BoxDecoration(
-                    color: HexColor("#2a9d8f"),
-                  ),
-                  child: Image.network(
-                    imgUrl,
-                    fit: BoxFit.cover,
-                    errorBuilder: (BuildContext context, Object exception,
-                        StackTrace? stackTrace) {
-                      return Container(
-                          width: 50, child: CircularProgressIndicator());
-                    },
-                  ),
+            items: img.map(
+              (imgUrl) {
+                return Builder(
+                  builder: (BuildContext context) {
+                    return Container(
+                      width: MediaQuery.of(context).size.width,
+                      margin: EdgeInsets.only(right: 7.0, left: 7.0, top: 10.0),
+                      decoration: BoxDecoration(
+                        color: HexColor("#2a9d8f"),
+                      ),
+                      child: Image.network(
+                        imgUrl,
+                        fit: BoxFit.cover,
+                        errorBuilder: (BuildContext context, Object exception,
+                            StackTrace? stackTrace) {
+                          return Container(
+                            width: 50,
+                            child: CircularProgressIndicator(),
+                          );
+                        },
+                      ),
+                    );
+                  },
                 );
-              });
-            }).toList()),
+              },
+            ).toList()),
         SizedBox(
           height: 10.0,
         ),
         ListTile(
-            title: new Text("Pilih Fitur",
-                style:
-                    new TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0)),
-            trailing: new Icon(Icons.pages_outlined)),
+          title: new Text(
+            "Pilih Fitur",
+            style: new TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
+          ),
+          trailing: new Icon(Icons.pages_outlined),
+        ),
         cardOfMenu(),
         ListTile(
-            title: new Text("Berita Nich",
-                style:
-                    new TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0)),
-            trailing: new Icon(Icons.book_outlined)),
+          title: new Text(
+            "Berita Nich",
+            style: new TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
+          ),
+          trailing: new Icon(Icons.book_outlined),
+        ),
         cardOfNews(
             "https://www.radarcirebon.com/wp-content/uploads/2018/08/ojol.jpg",
             "Anter Wisuda",
