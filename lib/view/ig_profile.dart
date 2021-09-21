@@ -1,3 +1,4 @@
+import '../shared/theme.dart';
 import 'package:flutter/material.dart';
 
 class IgProfile extends StatelessWidget {
@@ -5,6 +6,13 @@ class IgProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: appBar,
+      body: ListView(
+        primary: false,
+        shrinkWrap: true,
+        children: [],
+      ),
+    );
   }
 }

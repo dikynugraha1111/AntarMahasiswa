@@ -20,3 +20,21 @@ FontWeight semiBold = FontWeight.w600;
 FontWeight bold = FontWeight.w700;
 FontWeight extraBold = FontWeight.w800;
 FontWeight black = FontWeight.w900;
+
+// noted AppBar
+AppBar appBar = AppBar(
+  title: Text(
+    "dikydifiera",
+    style: tBlacTextStyle.copyWith(fontWeight: bold, fontSize: 21),
+  ),
+  actions: [
+    Icon(
+      Icons.add_box_outlined,
+      color: kBlackColor,
+    ),
+    Icon(
+      Icons.format_list_bulleted_rounded,
+      color: kBlackColor,
+    ),
+  ],
+);
