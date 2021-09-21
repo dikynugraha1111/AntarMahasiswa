@@ -23,18 +23,27 @@ FontWeight black = FontWeight.w900;
 
 // noted AppBar
 AppBar appBar = AppBar(
+  foregroundColor: kWhiteColor,
+  shadowColor: kWhiteColor,
+  backgroundColor: kWhiteColor,
   title: Text(
     "dikydifiera",
     style: tBlacTextStyle.copyWith(fontWeight: bold, fontSize: 21),
   ),
   actions: [
-    Icon(
-      Icons.add_box_outlined,
-      color: kBlackColor,
+    Padding(
+      padding: EdgeInsets.symmetric(horizontal: 3.0),
+      child: Icon(
+        Icons.add_box_outlined,
+        color: kBlackColor,
+      ),
     ),
-    Icon(
-      Icons.format_list_bulleted_rounded,
-      color: kBlackColor,
+    Padding(
+      padding: EdgeInsets.symmetric(horizontal: 11.0),
+      child: Icon(
+        Icons.format_list_bulleted_rounded,
+        color: kBlackColor,
+      ),
     ),
   ],
 );
