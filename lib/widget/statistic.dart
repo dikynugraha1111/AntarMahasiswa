@@ -27,7 +27,6 @@ class WidgetColumnStatistic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 5.0),
       child: Column(
         children: [
           Text(

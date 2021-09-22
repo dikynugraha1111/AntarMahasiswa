@@ -33,16 +33,22 @@ AppBar appBar = AppBar(
   actions: [
     Padding(
       padding: EdgeInsets.symmetric(horizontal: 3.0),
-      child: Icon(
-        Icons.add_box_outlined,
-        color: kBlackColor,
+      child: GestureDetector(
+        onTap: () {},
+        child: Icon(
+          Icons.add_box_outlined,
+          color: kBlackColor,
+        ),
       ),
     ),
     Padding(
       padding: EdgeInsets.symmetric(horizontal: 11.0),
-      child: Icon(
-        Icons.format_list_bulleted_rounded,
-        color: kBlackColor,
+      child: GestureDetector(
+        onTap: () {},
+        child: Icon(
+          Icons.format_list_bulleted_rounded,
+          color: kBlackColor,
+        ),
       ),
     ),
   ],
