@@ -1,5 +1,6 @@
 import 'package:antarmahasiswa/widget/desc_profile.dart';
 import 'package:antarmahasiswa/widget/list_horizontal_history.dart';
+import 'package:antarmahasiswa/widget/list_vertical_history.dart';
 
 import '../widget/statistic.dart';
 
@@ -56,8 +57,12 @@ class IgProfile extends StatelessWidget {
           ButtonProfile(),
           Container(
             height: 60,
+            width: double.infinity,
             margin: EdgeInsets.only(top: 9.0, bottom: 9.0, left: 14.0),
             child: ListView.builder(
+                primary: false,
+                shrinkWrap: true,
+                controller: ScrollController(),
                 scrollDirection: Axis.horizontal,
                 itemCount: listHorizontalHistory.length,
                 itemBuilder: (BuildContext context, int index) {
@@ -67,6 +72,18 @@ class IgProfile extends StatelessWidget {
                     iconAdd: listHorizontalHistory[index],
                   );
                 }),
+          ),
+          Column(
+            children: List.generate(10, (index) {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: List.generate(3, (index) {
+                  return Center(
+                    child: ListVerticalHistory(),
+                  );
+                }),
+              );
+            }),
           ),
         ],
       ),
