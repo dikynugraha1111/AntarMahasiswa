@@ -1,4 +1,5 @@
 import 'package:antarmahasiswa/widget/desc_profile.dart';
+import 'package:antarmahasiswa/widget/list_horizontal_history.dart';
 
 import '../widget/statistic.dart';
 
@@ -6,6 +7,18 @@ import '../shared/theme.dart';
 import 'package:flutter/material.dart';
 import '../widget/custom_circle.dart';
 import '../widget/button_profile.dart';
+
+final List<bool> listHorizontalHistory = <bool>[
+  true,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+];
 
 class IgProfile extends StatelessWidget {
   const IgProfile({Key? key}) : super(key: key);
@@ -16,6 +29,7 @@ class IgProfile extends StatelessWidget {
       backgroundColor: kWhiteColor,
       appBar: appBar,
       body: ListView(
+        scrollDirection: Axis.vertical,
         primary: false,
         shrinkWrap: true,
         children: [
@@ -40,6 +54,20 @@ class IgProfile extends StatelessWidget {
               iconPart: Icons.people_alt_sharp,
               quote: "Ra ngoding Ra mangan!"),
           ButtonProfile(),
+          Container(
+            height: 60,
+            margin: EdgeInsets.only(top: 9.0, bottom: 9.0, left: 14.0),
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: listHorizontalHistory.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return ListHorizontalHistory(
+                    noLeft: listHorizontalHistory[index],
+                    addNew: listHorizontalHistory[index],
+                    iconAdd: listHorizontalHistory[index],
+                  );
+                }),
+          ),
         ],
       ),
     );
