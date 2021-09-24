@@ -8,8 +8,8 @@ class CustomCircle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 15.0),
-      width: 150.0,
-      height: 150.0,
+      width: 125.0,
+      height: 125.0,
       decoration: new BoxDecoration(
         shape: BoxShape.circle,
         image: new DecorationImage(

@@ -17,8 +17,6 @@ final List<bool> listHorizontalHistory = <bool>[
   false,
   false,
   false,
-  false,
-  false,
 ];
 
 class IgProfile extends StatelessWidget {
@@ -79,7 +77,9 @@ class IgProfile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: List.generate(3, (index) {
                   return Center(
-                    child: ListVerticalHistory(),
+                    child: ListVerticalHistory(
+                      index: index.toString(),
+                    ),
                   );
                 }),
               );

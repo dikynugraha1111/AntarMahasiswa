@@ -1,3 +1,7 @@
+import 'package:antarmahasiswa/shared/set_nav.dart';
+import 'package:antarmahasiswa/view/detail_page.dart';
+import 'package:antarmahasiswa/view/splash_screen_page.dart';
+
 import 'view/ig_profile.dart';
 
 import 'view/register_page.dart';
@@ -14,7 +18,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Antar Mahasiswa',
-      home: IgProfile(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => SplashScreenPage(),
+        '/home-page': (context) => IgProfile(),
+        DetailPage.routeName: (contex) => DetailPage(),
+      },
     );
   }
 }
