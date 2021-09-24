@@ -36,6 +36,12 @@ Form Validation
 
 <img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/InputReg5.jpg" width="300" />
 
+## ScreenShot Re-Task 1 Flutter
+
+Home Page
+
+<img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/ReTask1.jpg" width="300" />
+
 A new Flutter project.
 
 ## Getting Started
