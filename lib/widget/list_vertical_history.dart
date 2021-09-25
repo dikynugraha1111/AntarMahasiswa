@@ -14,6 +14,7 @@ class ListVerticalHistory extends StatelessWidget {
             arguments: DetailPageArguments("Diky Difiera", index));
       },
       child: Container(
+        margin: EdgeInsets.all(3.0),
         height: MediaQuery.of(context).size.width / 3 - 10,
         width: MediaQuery.of(context).size.width / 3 - 10,
         decoration: BoxDecoration(

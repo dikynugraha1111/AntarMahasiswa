@@ -2,12 +2,12 @@ import 'package:antarmahasiswa/widget/desc_profile.dart';
 import 'package:antarmahasiswa/widget/list_horizontal_history.dart';
 import 'package:antarmahasiswa/widget/list_vertical_history.dart';
 
-import '../widget/statistic.dart';
+import '../../widget/statistic.dart';
 
-import '../shared/theme.dart';
+import '../../shared/theme.dart';
 import 'package:flutter/material.dart';
-import '../widget/custom_circle.dart';
-import '../widget/button_profile.dart';
+import '../../widget/custom_circle.dart';
+import '../../widget/button_profile.dart';
 
 final List<bool> listHorizontalHistory = <bool>[
   true,
@@ -29,8 +29,8 @@ class IgProfile extends StatelessWidget {
       appBar: appBar,
       body: ListView(
         scrollDirection: Axis.vertical,
-        primary: false,
-        shrinkWrap: true,
+        primary: true,
+        shrinkWrap: false,
         children: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 9.0, vertical: 11.0),
@@ -56,7 +56,11 @@ class IgProfile extends StatelessWidget {
           Container(
             height: 60,
             width: double.infinity,
-            margin: EdgeInsets.only(top: 9.0, bottom: 9.0, left: 14.0),
+            padding: EdgeInsets.only(left: 14.0),
+            margin: EdgeInsets.only(
+              top: 9.0,
+              bottom: 9.0,
+            ),
             child: ListView.builder(
                 primary: false,
                 shrinkWrap: true,
@@ -71,20 +75,35 @@ class IgProfile extends StatelessWidget {
                   );
                 }),
           ),
-          Column(
-            children: List.generate(10, (index) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: List.generate(3, (index) {
-                  return Center(
-                    child: ListVerticalHistory(
-                      index: index.toString(),
-                    ),
-                  );
-                }),
-              );
-            }),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 9.0),
+            child: GridView.count(
+              scrollDirection: Axis.vertical,
+              crossAxisCount: 3,
+              primary: false,
+              shrinkWrap: true,
+              children: List.generate(15, (index) {
+                return ListVerticalHistory(
+                  index: index.toString(),
+                );
+              }),
+            ),
           ),
+
+          // Column(
+          //   children: List.generate(10, (index) {
+          //     return Row(
+          //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //       children: List.generate(3, (index) {
+          //         return Center(
+          //           child: ListVerticalHistory(
+          //             index: index.toString(),
+          //           ),
+          //         );
+          //       }),
+          //     );
+          //   }),
+          // ),
         ],
       ),
     );
