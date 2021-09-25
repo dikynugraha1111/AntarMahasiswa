@@ -3,6 +3,8 @@ import 'view/splash_screen_page.dart';
 import 'view/retask_1/ig_profile.dart';
 import 'package:flutter/material.dart';
 
+import 'view/task_3/home_task3.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -18,6 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => SplashScreenPage(),
         '/home-page': (context) => IgProfile(),
+        '/home-page-task3': (context) => HomeTask3(),
         DetailPage.routeName: (contex) => DetailPage(),
       },
     );
