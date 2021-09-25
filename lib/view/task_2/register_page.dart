@@ -1,7 +1,6 @@
-import 'package:antarmahasiswa/widget/custom_dialog.dart';
-import 'package:antarmahasiswa/widget/widget_pesan.dart';
-import 'package:antarmahasiswa/widget/widget_pesan_date.dart';
-
+import '../../widget/custom_dialog.dart';
+import '../../widget/widget_pesan.dart';
+import '../../widget/widget_pesan_date.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

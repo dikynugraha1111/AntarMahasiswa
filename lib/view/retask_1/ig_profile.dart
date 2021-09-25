@@ -1,13 +1,11 @@
-import 'package:antarmahasiswa/widget/desc_profile.dart';
-import 'package:antarmahasiswa/widget/list_horizontal_history.dart';
-import 'package:antarmahasiswa/widget/list_vertical_history.dart';
-
-import '../widget/statistic.dart';
-
-import '../shared/theme.dart';
+import '../../widget/desc_profile.dart';
+import '../../widget/list_horizontal_history.dart';
+import '../../widget/list_vertical_history.dart';
+import '../../widget/statistic.dart';
+import '../../shared/theme.dart';
 import 'package:flutter/material.dart';
-import '../widget/custom_circle.dart';
-import '../widget/button_profile.dart';
+import '../../widget/custom_circle.dart';
+import '../../widget/button_profile.dart';
 
 final List<bool> listHorizontalHistory = <bool>[
   true,

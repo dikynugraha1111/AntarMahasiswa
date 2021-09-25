@@ -1,7 +1,6 @@
 import 'dart:ui';
-
-import 'package:antarmahasiswa/view/home_page.dart';
-import 'package:antarmahasiswa/view/profile_page.dart';
+import 'home_page.dart';
+import 'profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';

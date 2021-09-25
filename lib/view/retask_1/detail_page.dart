@@ -1,5 +1,5 @@
-import 'package:antarmahasiswa/shared/set_nav.dart';
-import 'package:antarmahasiswa/shared/theme.dart';
+import '../../shared/set_nav.dart';
+import '../../shared/theme.dart';
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatefulWidget {

@@ -1,10 +1,6 @@
-import 'package:antarmahasiswa/shared/set_nav.dart';
-import 'package:antarmahasiswa/view/detail_page.dart';
-import 'package:antarmahasiswa/view/splash_screen_page.dart';
-
-import 'view/ig_profile.dart';
-
-import 'view/register_page.dart';
+import 'view/retask_1/detail_page.dart';
+import 'view/splash_screen_page.dart';
+import 'view/retask_1/ig_profile.dart';
 import 'package:flutter/material.dart';
 
 void main() {
