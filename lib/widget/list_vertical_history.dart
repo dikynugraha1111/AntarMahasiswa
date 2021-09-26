@@ -10,8 +10,11 @@ class ListVerticalHistory extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, DetailPage.routeName,
-            arguments: DetailPageArguments("Diky Difiera", index));
+        Navigator.pushNamed(
+          context,
+          DetailPage.routeName,
+          arguments: DetailPageArguments("Diky Difiera", index),
+        );
       },
       child: Container(
         margin: EdgeInsets.all(3.0),

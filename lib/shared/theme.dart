@@ -59,3 +59,19 @@ AppBar appBar = AppBar(
     ),
   ],
 );
+
+PreferredSizeWidget appBarDetailPageTask3(String nameProduct) {
+  return AppBar(
+    foregroundColor: kGreyColor,
+    backgroundColor: kWhiteColor,
+    title: Text(
+      nameProduct,
+      overflow: TextOverflow.clip,
+      style: tNaturalDarkTextStyle.copyWith(
+        fontWeight: semiBold,
+        fontSize: 16.0,
+        letterSpacing: 0.5,
+      ),
+    ),
+  );
+}

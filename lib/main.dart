@@ -1,3 +1,5 @@
+import 'package:antarmahasiswa/view/task_3/detail_page_task3.dart';
+
 import 'view/retask_1/detail_page.dart';
 import 'view/splash_screen_page.dart';
 import 'view/retask_1/ig_profile.dart';
@@ -21,7 +23,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => SplashScreenPage(),
         '/home-page': (context) => IgProfile(),
         '/home-page-task3': (context) => HomeTask3(),
-        DetailPage.routeName: (contex) => DetailPage(),
+        DetailPage.routeName: (context) => DetailPage(),
+        DetailPageTask3.routeNameTask3: (context) => DetailPageTask3(),
       },
     );
   }

@@ -1,4 +1,13 @@
-class ArgumentsProduct {}
+class ArgumentsProduct {
+  final String imageUrl;
+  final String titleProduct;
+  final String price;
+
+  ArgumentsProduct(
+      {required this.imageUrl,
+      required this.titleProduct,
+      required this.price});
+}
 
 List<String> nameProduct = <String>[
   "Nike Air Max 1",

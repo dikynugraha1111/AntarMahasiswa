@@ -6,6 +6,8 @@ class WidgetPesan extends StatelessWidget {
   final String labelText;
   final int maxLength;
   final TextInputType inputType;
+  final bool initial;
+  final String initialText;
 
   final ValueChanged<String?> onSaved;
   final FormFieldValidator<String>? validator;
@@ -16,6 +18,8 @@ class WidgetPesan extends StatelessWidget {
     required this.labelText,
     required this.maxLength,
     this.inputType = TextInputType.text,
+    this.initial = false,
+    this.initialText = "",
     required this.onSaved,
     this.validator,
   }) : super(key: key);
@@ -38,6 +42,7 @@ class WidgetPesan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: initial ? initialText : null,
       keyboardType: this.inputType,
       inputFormatters: this._inputFormatters,
       decoration: InputDecoration(

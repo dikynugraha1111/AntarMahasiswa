@@ -28,7 +28,12 @@ class ListHorizontalHistory extends StatelessWidget {
             color: kBlackColor,
           ),
         ),
-        child:
-            iconAdd ? Icon(Icons.add, color: kBlackColor, size: 25.0) : null);
+        child: iconAdd
+            ? Icon(
+                Icons.add,
+                color: kBlackColor,
+                size: 25.0,
+              )
+            : null);
   }
 }
