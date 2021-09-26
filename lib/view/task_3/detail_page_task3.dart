@@ -1,6 +1,7 @@
 import 'package:antarmahasiswa/shared/args_product.dart';
 import 'package:antarmahasiswa/shared/theme.dart';
 import 'package:antarmahasiswa/widget/banner_detail_page_task3.dart';
+import 'package:antarmahasiswa/widget/button_input_task3.dart';
 import 'package:antarmahasiswa/widget/desc_detail_page_task3.dart';
 import 'package:antarmahasiswa/widget/widget_pesan.dart';
 
@@ -19,6 +20,7 @@ class _DetailPageTask3State extends State<DetailPageTask3> {
   late String nameTask3;
   late int phoneTask3;
   late String addressTask3;
+  int total = 1;
 
   late final GlobalKey<ScaffoldState> _scaffoldKeyTask3 =
       GlobalKey<ScaffoldState>();
@@ -114,6 +116,35 @@ class _DetailPageTask3State extends State<DetailPageTask3> {
                       addressTask3 = value!;
                     },
                   ),
+                  SizedBox(
+                    height: 9.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "\$${(int.parse(argsDetailTask3.price) * total).toString()}",
+                        style: tPrimaryBlueTextStyle.copyWith(
+                          fontSize: 16.0,
+                          fontWeight: semiBold,
+                          letterSpacing: 0.5,
+                        ),
+                      ),
+                      ButtonInputTaks3(
+                        plus: () {
+                          setState(() {
+                            total++;
+                          });
+                        },
+                        min: () {
+                          setState(() {
+                            total--;
+                          });
+                        },
+                        totalProduct: total.toString(),
+                      )
+                    ],
+                  )
                 ],
               ),
             ),

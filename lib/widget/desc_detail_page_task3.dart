@@ -52,7 +52,7 @@ class DescDetailPageTask3 extends StatelessWidget {
             height: 8.0,
           ),
           Text(
-            price,
+            "\$$price",
             style: tPrimaryBlueTextStyle.copyWith(
               fontSize: 16.0,
               fontWeight: semiBold,

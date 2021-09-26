@@ -56,7 +56,7 @@ class BoxProductTask3 extends StatelessWidget {
               height: 11.0,
             ),
             Text(
-              priceProduct,
+              "\$$priceProduct",
               style: tPrimaryBlueTextStyle.copyWith(
                 fontSize: 12,
                 fontWeight: normal,

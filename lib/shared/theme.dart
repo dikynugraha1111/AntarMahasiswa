@@ -9,6 +9,7 @@ Color kGreyColor = const Color(0xFFb9b9b9);
 Color kPrimaryBlue = const Color(0xFF40BFFF);
 Color kNaturalDark = const Color(0xFF223263);
 Color kPrimaryRed = const Color(0xFFFB7181);
+Color kNaturalLight = const Color(0xFFEBF0FF);
 
 // Noted Global TextStyle
 TextStyle tGreyTextStyle = GoogleFonts.poppins(color: kGreyColor);
