@@ -1,6 +1,7 @@
 import 'package:antarmahasiswa/shared/args_product.dart';
 import 'package:antarmahasiswa/shared/theme.dart';
 import 'package:antarmahasiswa/widget/banner_detail_page_task3.dart';
+import 'package:antarmahasiswa/widget/desc_detail_page_task3.dart';
 import 'package:antarmahasiswa/widget/widget_pesan.dart';
 
 import 'package:flutter/material.dart';
@@ -33,56 +34,15 @@ class _DetailPageTask3State extends State<DetailPageTask3> {
       body: ListView(
         children: [
           BannerDetailPageTask3(imageUrl: argsDetailTask3.imageUrl),
-          Container(
-            margin: EdgeInsets.all(16.0),
-            child: ListView(
-              primary: false,
-              shrinkWrap: true,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      argsDetailTask3.titleProduct,
-                      overflow: TextOverflow.clip,
-                      style: tNaturalDarkTextStyle.copyWith(
-                        fontWeight: semiBold,
-                        fontSize: 20.0,
-                        letterSpacing: 0.5,
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          like = !like;
-                        });
-                      },
-                      child: like
-                          ? Icon(
-                              Icons.favorite,
-                              color: kPrimaryRed,
-                              size: 24,
-                            )
-                          : Icon(
-                              Icons.favorite_border,
-                              size: 24,
-                            ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 8.0,
-                ),
-                Text(
-                  argsDetailTask3.price,
-                  style: tPrimaryBlueTextStyle.copyWith(
-                    fontSize: 16.0,
-                    fontWeight: semiBold,
-                    letterSpacing: 0.5,
-                  ),
-                ),
-              ],
-            ),
+          DescDetailPageTask3(
+            titleProduct: argsDetailTask3.titleProduct,
+            price: argsDetailTask3.price,
+            isLove: like,
+            love: () {
+              setState(() {
+                like = !like;
+              });
+            },
           ),
           Form(
             key: formKeyTask3,
