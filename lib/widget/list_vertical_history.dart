@@ -1,4 +1,4 @@
-import 'package:antarmahasiswa/shared/set_nav.dart';
+import 'package:antarmahasiswa/shared/args_nav.dart';
 import 'package:antarmahasiswa/view/retask_1/detail_page.dart';
 import 'package:flutter/material.dart';
 

@@ -6,11 +6,17 @@ Color kBlueColor = const Color(0xFF0b3973);
 Color kBlackColor = const Color(0xFF231f20);
 Color kWhiteColor = const Color(0xFFfafafa);
 Color kGreyColor = const Color(0xFFb9b9b9);
+Color kPrimaryBlue = const Color(0xFF40BFFF);
+Color kNaturalDark = const Color(0xFF223263);
+Color kPrimaryRed = const Color(0xFFFB7181);
 
 // Noted Global TextStyle
 TextStyle tGreyTextStyle = GoogleFonts.poppins(color: kGreyColor);
 TextStyle tBlacTextStyle = GoogleFonts.poppins(color: kBlackColor);
 TextStyle tBlueTextStyle = GoogleFonts.poppins(color: kBlueColor);
+TextStyle tWhiteTextStyle = GoogleFonts.poppins(color: kWhiteColor);
+TextStyle tPrimaryBlueTextStyle = GoogleFonts.poppins(color: kPrimaryBlue);
+TextStyle tNaturalDarkTextStyle = GoogleFonts.poppins(color: kNaturalDark);
 
 // Noted GlobalFontWeight
 FontWeight light = FontWeight.w300;

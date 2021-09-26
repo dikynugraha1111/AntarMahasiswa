@@ -1,4 +1,4 @@
-import '../../shared/set_nav.dart';
+import '../../shared/args_nav.dart';
 import '../../shared/theme.dart';
 import 'package:flutter/material.dart';
 
