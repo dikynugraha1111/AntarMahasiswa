@@ -2,6 +2,7 @@ import 'package:antarmahasiswa/shared/args_product.dart';
 import 'package:antarmahasiswa/shared/theme.dart';
 import 'package:antarmahasiswa/widget/banner_detail_page_task3.dart';
 import 'package:antarmahasiswa/widget/button_input_task3.dart';
+import 'package:antarmahasiswa/widget/custom_dialog.dart';
 import 'package:antarmahasiswa/widget/desc_detail_page_task3.dart';
 import 'package:antarmahasiswa/widget/widget_pesan.dart';
 
@@ -50,7 +51,7 @@ class _DetailPageTask3State extends State<DetailPageTask3> {
             key: formKeyTask3,
             child: Container(
               padding: const EdgeInsets.only(
-                  left: 20.0, right: 20.0, bottom: 7.0, top: 27.0),
+                  left: 20.0, right: 20.0, bottom: 17.0, top: 7.0),
               child: ListView(
                 primary: false,
                 shrinkWrap: true,
@@ -112,9 +113,7 @@ class _DetailPageTask3State extends State<DetailPageTask3> {
                       }
                       return null;
                     },
-                    onSaved: (String? value) {
-                      addressTask3 = value!;
-                    },
+                    onSaved: (String? value) {},
                   ),
                   SizedBox(
                     height: 9.0,
@@ -142,9 +141,48 @@ class _DetailPageTask3State extends State<DetailPageTask3> {
                           });
                         },
                         totalProduct: total.toString(),
-                      )
+                      ),
                     ],
-                  )
+                  ),
+                  SizedBox(
+                    height: 15.0,
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(vertical: 7.0),
+                      primary: kPrimaryBlue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(7.0),
+                      ),
+                    ),
+                    onPressed: () {
+                      if (!formKeyTask3.currentState!.validate()) {
+                        return;
+                      }
+                      formKeyTask3.currentState!.save();
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return CustomDialog(
+                            title: "Booked",
+                            description:
+                                "Selamat $nameTask3 Pesanan ${argsDetailTask3.titleProduct} anda berhasil",
+                            phone: phoneTask3.toString(),
+                            address: addressTask3,
+                          );
+                        },
+                      );
+                    },
+                    child: Text(
+                      "Pesan",
+                      style: tWhiteTextStyle.copyWith(
+                        fontSize: 17.0,
+                        letterSpacing: 2.5,
+                        fontWeight: medium,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                 ],
               ),
             ),

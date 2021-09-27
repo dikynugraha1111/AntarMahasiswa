@@ -6,10 +6,10 @@ class CustomDialog extends StatelessWidget {
   CustomDialog(
       {required this.title,
       required this.description,
-      required this.email,
+      this.email = "",
       required this.phone,
       required this.address,
-      required this.date});
+      this.date = ""});
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +59,7 @@ class CustomDialog extends StatelessWidget {
                     fontSize: 16,
                     fontFamily: "Poppins",
                     fontWeight: FontWeight.w300),
+                textAlign: TextAlign.center,
               ),
               Text(
                 email,

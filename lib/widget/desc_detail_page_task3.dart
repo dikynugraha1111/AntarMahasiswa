@@ -48,9 +48,7 @@ class DescDetailPageTask3 extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
-            height: 8.0,
-          ),
+          SizedBox(height: 8.0),
           Text(
             "\$$price",
             style: tPrimaryBlueTextStyle.copyWith(
@@ -58,6 +56,24 @@ class DescDetailPageTask3 extends StatelessWidget {
               fontWeight: semiBold,
               letterSpacing: 0.5,
             ),
+          ),
+          SizedBox(height: 9.0),
+          Text(
+            "Description\n",
+            style: tNaturalDarkTextStyle.copyWith(
+              fontSize: 14.0,
+              fontWeight: semiBold,
+              letterSpacing: 0.5,
+            ),
+          ),
+          Text(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus felis erat. Mauris congue placerat turpis, quis auctor ante hendrerit a. Cras placerat tempus dictum. Fusce non ultricies magna, at hendrerit tortor. Duis et eros purus. Vestibulum diam tortor, maximus non laoreet sit amet, porttitor at odio. Nunc ultrices venenatis cursus.",
+            style: tGreyTextStyle.copyWith(
+              fontSize: 12.0,
+              fontWeight: normal,
+              letterSpacing: 0.5,
+            ),
+            softWrap: true,
           ),
         ],
       ),
