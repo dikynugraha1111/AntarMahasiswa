@@ -26,24 +26,17 @@ class BoxProductTask3 extends StatelessWidget {
           ),
         );
       },
-      child: Container(
-        padding: EdgeInsets.all(16.0),
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: kGreyColor,
-          ),
+      child: GridTile(
+        header: Image.asset(
+          imageAssetBox,
+          fit: BoxFit.cover,
+          width: 133.0,
+          alignment: Alignment.center,
+          height: 133.0,
         ),
-        child: Column(
+        footer: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(
-              imageAssetBox,
-              width: 133.0,
-              height: 133.0,
-            ),
-            SizedBox(
-              height: 8.0,
-            ),
             Text(
               nameProduct,
               style: tNaturalDarkTextStyle.copyWith(
@@ -53,7 +46,7 @@ class BoxProductTask3 extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 11.0,
+              height: 5.0,
             ),
             Text(
               "\$$priceProduct",
@@ -65,6 +58,7 @@ class BoxProductTask3 extends StatelessWidget {
             ),
           ],
         ),
+        child: Text(""),
       ),
     );
   }

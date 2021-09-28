@@ -33,13 +33,15 @@ class _DetailPageTask3State extends State<DetailPageTask3> {
         ModalRoute.of(context)!.settings.arguments as ArgumentsProduct;
     return Scaffold(
       key: _scaffoldKeyTask3,
-      appBar: appBarDetailPageTask3("${argsDetailTask3.titleProduct}"),
+      appBar: appBarDetailPageTask3(
+          "${argsDetailTask3.titleProduct ?? "Custom Product"}"),
       body: ListView(
         children: [
-          BannerDetailPageTask3(imageUrl: argsDetailTask3.imageUrl),
+          BannerDetailPageTask3(
+              imageUrl: argsDetailTask3.imageUrl ?? "assets/Icon.png"),
           DescDetailPageTask3(
-            titleProduct: argsDetailTask3.titleProduct,
-            price: argsDetailTask3.price,
+            titleProduct: argsDetailTask3.titleProduct ?? "Custom Design",
+            price: argsDetailTask3.price ?? "\$ - We'll Contact you soon",
             isLove: like,
             love: () {
               setState(() {
@@ -100,35 +102,52 @@ class _DetailPageTask3State extends State<DetailPageTask3> {
                       addressTask3 = value!;
                     },
                   ),
-                  WidgetPesan(
-                    initial: true,
-                    initialText: argsDetailTask3.titleProduct,
-                    inputType: TextInputType.text,
-                    hintText: "Pesanan Anda",
-                    labelText: "Pesanan",
-                    maxLength: 50,
-                    validator: (String? value) {
-                      if (value!.isEmpty) {
-                        return 'Address is Required';
-                      }
-                      return null;
-                    },
-                    onSaved: (String? value) {},
+                  SizedBox(
+                    height: 9.0,
                   ),
+                  argsDetailTask3.titleProduct != null
+                      ? Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Pesanan anda",
+                              style: tBlacTextStyle,
+                            ),
+                            Text(
+                              "${argsDetailTask3.titleProduct}",
+                              style: tBlacTextStyle,
+                            ),
+                          ],
+                        )
+                      : WidgetPesan(
+                          inputType: TextInputType.text,
+                          hintText: "Custom Pesanan Anda",
+                          labelText: "Pesanan",
+                          maxLength: 50,
+                          validator: (String? value) {
+                            if (value!.isEmpty) {
+                              return 'Field is Required';
+                            }
+                            return null;
+                          },
+                          onSaved: (String? value) {},
+                        ),
                   SizedBox(
                     height: 9.0,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        "\$${(int.parse(argsDetailTask3.price) * total).toString()}",
-                        style: tPrimaryBlueTextStyle.copyWith(
-                          fontSize: 16.0,
-                          fontWeight: semiBold,
-                          letterSpacing: 0.5,
-                        ),
-                      ),
+                      argsDetailTask3.price != null
+                          ? Text(
+                              "\$${(int.parse(argsDetailTask3.price!) * total).toString()}",
+                              style: tPrimaryBlueTextStyle.copyWith(
+                                fontSize: 16.0,
+                                fontWeight: semiBold,
+                                letterSpacing: 0.5,
+                              ),
+                            )
+                          : Text(""),
                       ButtonInputTaks3(
                         plus: () {
                           setState(() {
@@ -166,7 +185,7 @@ class _DetailPageTask3State extends State<DetailPageTask3> {
                           return CustomDialog(
                             title: "Booked",
                             description:
-                                "Selamat $nameTask3 Pesanan ${argsDetailTask3.titleProduct} anda berhasil",
+                                "Selamat $nameTask3 Pesanan anda berhasil",
                             phone: phoneTask3.toString(),
                             address: addressTask3,
                           );

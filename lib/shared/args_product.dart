@@ -1,12 +1,9 @@
 class ArgumentsProduct {
-  final String imageUrl;
-  final String titleProduct;
-  final String price;
+  final String? imageUrl;
+  final String? titleProduct;
+  final String? price;
 
-  ArgumentsProduct(
-      {required this.imageUrl,
-      required this.titleProduct,
-      required this.price});
+  ArgumentsProduct({this.imageUrl, this.titleProduct, this.price});
 }
 
 List<String> nameProduct = <String>[
