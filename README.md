@@ -56,9 +56,9 @@ Detail Page - Form Validation and Like Button
 
 <img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/Task4-3.jpg" width="300" />
 
-Show Dialog Success
+Custom Design
 
-<img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/Task4-4.jpg" width="300" />
+<img src="https://raw.githubusercontent.com/dikynugraha1111/AntarMahasiswa/master/img/Task4-5.jpg" width="300" />
 
 A new Flutter project.
 
